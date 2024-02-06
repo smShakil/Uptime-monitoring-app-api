@@ -1,27 +1,26 @@
+.DS_Store
+.thumbs.db
+
 # dependencies
 /node_modules
 
 # Build
 /build
+/dist
 
 # misc
-.env.local
 .env
-.env.development.local
-.env.test.local
-.env.production.local
+*.local
 
+# Log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-codeStyleConfig.xml
-vcs.xml
-Project.xml
-prettier.xml
-modules.xml
-
-
-
-/.idea/workspace.xml
-/.vscode/
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+/.vscode
