@@ -1,0 +1,27 @@
+# dependencies
+/node_modules
+
+# Build
+/build
+
+# misc
+.env.local
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+codeStyleConfig.xml
+vcs.xml
+Project.xml
+prettier.xml
+modules.xml
+
+
+
+/.idea/workspace.xml
+/.vscode/

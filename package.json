@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "start": "nodemon index",
+    "staging": "NODE_ENV=staging nodemon index",
+    "production": "NODE_ENV=production nodemon index"
+  },
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^5.1.2",
+    "prettier": "^3.1.1"
+  }
+}
