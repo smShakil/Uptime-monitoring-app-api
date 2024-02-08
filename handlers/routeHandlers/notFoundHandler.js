@@ -8,9 +8,9 @@
 // Module scaffolding
 const handler = {}
 
-handler.notFoundhandler = ({ callback }) => {
+handler.notFoundHandler = ({ callback }) => {
   callback(404, {
-    message: 'Your requested URL was not found!',
+    error: 'Your requested URL was not found!',
   })
 }
 
