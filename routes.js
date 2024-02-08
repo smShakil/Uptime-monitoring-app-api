@@ -7,11 +7,13 @@
 
 // Dependencies
 const { sampleHandler } = require('./handlers/routeHandlers/sampleHandler')
-const { notFoundhandler } = require('./handlers/routeHandlers/notFoundHandler')
+const { notFoundHandler } = require('./handlers/routeHandlers/notFoundHandler')
+const { userHandler } = require('./handlers/routeHandlers/userHandler')
 
 const routes = {
+  users: userHandler,
   sample: sampleHandler,
-  'not-found': notFoundhandler,
+  'not-found': notFoundHandler,
 }
 
 module.exports = routes
