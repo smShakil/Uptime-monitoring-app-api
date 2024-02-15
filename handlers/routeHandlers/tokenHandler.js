@@ -15,6 +15,17 @@ const handler = {}
 handler._token = {}
 handler.expiryDuration = 60 * 60 * 1000
 
+handler.checkAuthorization = (token, callback) => {
+  const { value, errors } = validator(token).type('string')
+  if (value && !errors?.length) {
+    const file = `${__dirname}/../../.data/tokens/${token}.json`
+    fs.readJson(file, (err, tokenData) => {
+      if (!err && tokenData.expiry > Date.now()) callback(true)
+      else callback(false)
+    })
+  } else callback(false)
+}
+
 handler.tokenHandler = ({ props, body, callback }) => {
   const acceptedMethods = ['get', 'post', 'put', 'delete']
   if (acceptedMethods.indexOf(props.method) > -1) {
