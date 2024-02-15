@@ -29,4 +29,9 @@ utilities.hash = (string) => {
   } else return null
 }
 
+// Generate random UUID
+utilities.generateUUID = () => {
+  return crypto.randomUUID()
+}
+
 module.exports = utilities
