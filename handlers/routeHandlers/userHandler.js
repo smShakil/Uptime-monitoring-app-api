@@ -9,18 +9,21 @@
 const fs = require('fs-extra')
 const validator = require('../../helpers/validators')
 const { hash } = require('../../helpers/utilities')
+const { checkAuthorization } = require('./tokenHandler')
 
 // Module scaffolding
 const handler = {}
 handler._user = {}
 
 handler.userHandler = ({ props, body, callback }) => {
-  const acceptedMethods = ['get', 'post', 'put', 'delete']
-  if (acceptedMethods.indexOf(props.method) > -1) {
-    handler._user[props.method]({ props, body, callback })
-  } else {
-    callback(405)
-  }
+  checkAuthorization(props?.headerObj?.token, (isAuthorized) => {
+    if (isAuthorized) {
+      const acceptedMethods = ['get', 'post', 'put', 'delete']
+      if (acceptedMethods.indexOf(props.method) > -1) {
+        handler._user[props.method]({ props, body, callback })
+      } else callback(405)
+    } else callback(403, { error: 'Unauthorized' })
+  })
 }
 
 handler._user.get = ({ props, callback }) => {
