@@ -7,7 +7,7 @@
 
 // Dependencies
 const fs = require('fs-extra')
-const validator = require('../../helpers/validators')
+const validator = require('chainable-simple-validator')
 const { hash, generateUUID } = require('../../helpers/utilities')
 
 // Module scaffolding
@@ -20,10 +20,10 @@ handler.checkAuthorization = (token, callback) => {
   if (value && !errors?.length) {
     const file = `${__dirname}/../../.data/tokens/${token}.json`
     fs.readJson(file, (err, tokenData) => {
-      if (!err && tokenData.expiry > Date.now()) callback(true)
-      else callback(false)
+      if (!err && tokenData.expiry > Date.now()) callback(true, tokenData)
+      else callback(false, null)
     })
-  } else callback(false)
+  } else callback(false, null)
 }
 
 handler.tokenHandler = ({ props, body, callback }) => {

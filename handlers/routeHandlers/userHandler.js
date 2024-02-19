@@ -7,7 +7,7 @@
 
 // Dependencies
 const fs = require('fs-extra')
-const validator = require('../../helpers/validators')
+const validator = require('chainable-simple-validator')
 const { hash } = require('../../helpers/utilities')
 const { checkAuthorization } = require('./tokenHandler')
 
@@ -19,7 +19,7 @@ handler.userHandler = ({ props, body, callback }) => {
   checkAuthorization(props?.headerObj?.token, (isAuthorized) => {
     if (isAuthorized) {
       const acceptedMethods = ['get', 'post', 'put', 'delete']
-      if (acceptedMethods.indexOf(props.method) > -1) {
+      if (acceptedMethods.includes(props.method)) {
         handler._user[props.method]({ props, body, callback })
       } else callback(405)
     } else callback(403, { error: 'Unauthorized' })
@@ -44,7 +44,7 @@ handler._user.get = ({ props, callback }) => {
 }
 
 handler._user.post = ({ body, callback }) => {
-  const { value: firstName, errors: fErrors } = validator(body.firstName).type('string')
+  const { value: firstName, errors: fErrors } = validator(body.firstName).type('array')
   const { value: lastName, errors: lErrors } = validator(body.lastName).nullable().type('string')
   const { value: phone, errors: pErrors } = validator(body.phone).type('string').exact(11)
   const { value: password, errors: passErrors } = validator(body.password).type('string').min(6)
