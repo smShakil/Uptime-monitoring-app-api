@@ -570,10 +570,10 @@ callsites@^3.0.0:
   resolved "https://registry.npmjs.org/callsites/-/callsites-3.1.0.tgz"
   integrity sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==
 
-chainable-simple-validator@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/chainable-simple-validator/-/chainable-simple-validator-1.1.0.tgz#f290747a457060b9e4850b98b343f4f26d74813d"
-  integrity sha512-v5GVwy4EvX1I8LJ8sq6oQSLZoA37gMX/s4PdBfUi+iiqAittJYJRy4jC/rinq4CSyMwKCnjpiTXUV50WsqhNCQ==
+chainable-simple-validator@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/chainable-simple-validator/-/chainable-simple-validator-1.2.1.tgz#f3c1f80d9fc62cbf1595710b8cd7a2f3f689b8b3"
+  integrity sha512-BnxAySBDHhc1pCaotpMRCxSIGZU1RtcdnGm7E5A5Jg5ebu0+ePeeszntgxl0E2is1HYAl76GSDQditECXaMiSw==
 
 chalk@^4.0.0:
   version "4.1.2"

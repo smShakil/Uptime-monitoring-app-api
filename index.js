@@ -1,6 +1,6 @@
 /*
- * Title: Up Time Monitor App
- * Description: A RESTFUL API to monitor up or down time of user defined links
+ * Title: App entry file
+ * Description: Entry file for the Up Time Monitor App
  * Author: S.M. Shakil
  * Date: 04/01/2024
  */
