@@ -16,7 +16,7 @@ const server = {}
 // Configuration
 server.config = {}
 
-server.createNodeServer = () => {
+server.startServer = () => {
   const instance = http.createServer((req, res) =>
     handleRequest({ protocol, port, host, req, res }),
   )
