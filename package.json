@@ -1,4 +1,8 @@
 {
+  "name": "Uptime-monitoring-app-api",
+  "version": "1.0.0",
+  "description": "Backend service which can monitor user given URLs for it's uptime status",
+  "main": "index.js",
   "scripts": {
     "start": "nodemon index",
     "staging": "NODE_ENV=staging nodemon index",
@@ -16,5 +20,14 @@
     "fs-extra": "^11.2.0",
     "install": "^0.13.0",
     "npm": "^10.4.0"
-  }
+  },
+  "keywords": [
+    "uptime",
+    "monitor",
+    "monitor-url",
+    "check-url",
+    "up",
+    "down",
+    "timeout"
+  ]
 }
