@@ -40,7 +40,7 @@ handler.handleRequest = ({ protocol, port, host, req, res }) => {
     data += decoder.end()
     choosenHandler({
       props: requestProps,
-      body: parseJSON(data),
+      body: data ? parseJSON(data) : {},
       callback: (statusCode, payload) => {
         statusCode = typeof statusCode === 'number' ? statusCode : 500
         payload = typeof payload === 'object' ? payload : {}

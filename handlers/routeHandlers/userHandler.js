@@ -17,7 +17,7 @@ handler._user = {}
 
 handler.userHandler = ({ props, body, callback }) => {
   checkAuthorization(props?.headerObj?.token, (isAuthorized) => {
-    if (isAuthorized) {
+    if (isAuthorized || props.method === 'post') {
       const acceptedMethods = ['get', 'post', 'put', 'delete']
       if (acceptedMethods.includes(props.method)) {
         handler._user[props.method]({ props, body, callback })
@@ -44,7 +44,7 @@ handler._user.get = ({ props, callback }) => {
 }
 
 handler._user.post = ({ body, callback }) => {
-  const { value: firstName, errors: fErrors } = validator(body.firstName).type('array')
+  const { value: firstName, errors: fErrors } = validator(body.firstName).type('string')
   const { value: lastName, errors: lErrors } = validator(body.lastName).nullable().type('string')
   const { value: phone, errors: pErrors } = validator(body.phone).type('string').exact(11)
   const { value: password, errors: passErrors } = validator(body.password).type('string').min(6)
