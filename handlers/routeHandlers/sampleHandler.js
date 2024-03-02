@@ -9,9 +9,7 @@
 const handler = {}
 
 handler.sampleHandler = ({ callback }) => {
-  callback(200, {
-    message: 'This is a sample URL',
-  })
+  callback(200, { message: 'This is a sample route' })
 }
 
 module.exports = handler

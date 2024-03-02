@@ -12,19 +12,22 @@ environments.development = {
   mode: 'development',
   protocol: 'http',
   host: 'localhost',
-  port: 3000,
+  port: 9000,
+  secretKey: 'hashKeyForPassword',
 }
 environments.staging = {
   mode: 'staging',
   protocol: 'https',
   host: 'shop.staging.com',
   port: 8080,
+  secretKey: 'hashKeyForPassword',
 }
 environments.production = {
   mode: 'production',
   protocol: 'https',
   host: 'shop.app.com',
   port: 8080,
+  secretKey: 'hashKeyForPassword',
 }
 
 const appliedMode = typeof process.env.NODE_ENV === 'string' ? process.env.NODE_ENV : 'development'

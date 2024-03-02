@@ -8,6 +8,7 @@
 // Dependencies
 const { URL } = require('node:url')
 const { StringDecoder } = require('node:string_decoder')
+const { parseJSON } = require('../helpers/utilities')
 const routes = require('../routes')
 
 // Module scaffolding
@@ -39,18 +40,18 @@ handler.handleRequest = ({ protocol, port, host, req, res }) => {
     data += decoder.end()
     choosenHandler({
       props: requestProps,
-      body: data,
+      body: data ? parseJSON(data) : {},
       callback: (statusCode, payload) => {
         statusCode = typeof statusCode === 'number' ? statusCode : 500
         payload = typeof payload === 'object' ? payload : {}
 
         const payloadString = JSON.stringify(payload)
+
+        res.setHeader('Content-Type', 'application/json')
         res.writeHeader(statusCode)
         res.end(payloadString)
       },
     })
-
-    res.end(fullUrl)
   })
 }
 
