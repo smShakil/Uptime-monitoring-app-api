@@ -1,0 +1,437 @@
+{
+	"info": {
+		"_postman_id": "e0d257a1-b11c-4f52-a98a-30f5477540e3",
+		"name": "Uptime Monitor App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3510781",
+		"_collection_link": "https://bold-meadow-619491.postman.co/workspace/SISO~ad0d6214-cdc9-4990-abe6-034760e1ea29/collection/3510781-e0d257a1-b11c-4f52-a98a-30f5477540e3?action=share&source=collection_link&creator=3510781"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Mr. X\",\n    \"lastName\": \"Uddin\",\n    \"phone\": \"01234567891\",\n    \"password\": \"123456\",\n    \"termsConditions\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "5625cdd5-db17-46eb-bd69-35c65914e770",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Mr. X\",\n    \"lastName\": \"Uddin\",\n    \"phone\": \"01234567891\",\n    \"password\": \"123456\",\n    \"termsConditions\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "5625cdd5-db17-46eb-bd69-35c65914e770",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/users?phone=01234567891",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "phone",
+									"value": "01234567891"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "5625cdd5-db17-46eb-bd69-35c65914e770",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/users?phone=01234567891",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "phone",
+									"value": "01234567891"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Monitors",
+			"item": [
+				{
+					"name": "monitors",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "5625cdd5-db17-46eb-bd69-35c65914e770",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"https://github.com\",\n    \"method\": \"GET\",\n    \"timeoutInSeconds\": 10,\n    \"successCodes\": [200, 201]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/monitors",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"monitors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "monitors",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "5625cdd5-db17-46eb-bd69-35c65914e770",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"7be7c875-4dee-4137-b351-fb59f920430d\",\n    \"url\": \"https://github.com\",\n    \"method\": \"GET\",\n    \"timeoutInSeconds\": 10,\n    \"successCodes\": [200, 301]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/monitors",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"monitors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "monitors",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "5625cdd5-db17-46eb-bd69-35c65914e770",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/monitors?id=7be7c875-4dee-4137-b351-fb59f920430d",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"monitors"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "7be7c875-4dee-4137-b351-fb59f920430d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "monitors",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "5625cdd5-db17-46eb-bd69-35c65914e770",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/monitors?id=46c77ae7-4799-46bf-aa04-bf8ac8cc0923",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"monitors"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "46c77ae7-4799-46bf-aa04-bf8ac8cc0923"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tokens",
+			"item": [
+				{
+					"name": "tokens",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": \"01234567891\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/tokens",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"tokens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tokens",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"5625cdd5-db17-46eb-bd69-35c65914e770\",\n    \"expiry\": 1709382447733\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/tokens",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"tokens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tokens",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/tokens?token=5625cdd5-db17-46eb-bd69-35c65914e770",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"tokens"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "5625cdd5-db17-46eb-bd69-35c65914e770"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tokens",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9000/tokens?token=5625cdd5-db17-46eb-bd69-35c65914e770",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"tokens"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "5625cdd5-db17-46eb-bd69-35c65914e770"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
