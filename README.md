@@ -1,6 +1,6 @@
 # Uptime-monitoring-app-api
 
-Backend service which can monitor user given URLs for it's uptime status.
+Raw Nodejs Backend service which can monitor user given URLs for it's uptime status.
 
 ## Getting Started
 
